@@ -1,0 +1,7 @@
+<!ELEMENT MonsterList (Monster)+ >
+<!ELEMENT Monster (Name, HitDice, Weapon+) >
+<!ELEMENT Name (#PCDATA) >
+<!ELEMENT HitDice EMPTY >
+<!ATTLIST HitDice Dice CDATA #IMPLIED Default CDATA #IMPLIED >
+<!ELEMENT Weapon (#PCDATA) >
+<!ATTLIST Weapon Number CDATA #IMPLIED Damage CDATA #IMPLIED >                 

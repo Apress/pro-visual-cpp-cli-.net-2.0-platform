@@ -1,0 +1,4 @@
+Color1 = Blue
+Color2 = Red
+Color3 = Yellow
+Color4 = Green

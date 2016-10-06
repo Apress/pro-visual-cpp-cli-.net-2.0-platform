@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MonsterList>
+   <!--Program Generated Easy Monster-->
+   <Monster>
+      <Name>Goblin</Name>
+      <HitDice
+         Dice="1d8"
+         Default="4" />
+      <Weapon
+         Number="1"
+         Damage="1d4">Dagger</Weapon>
+   </Monster>
+</MonsterList>

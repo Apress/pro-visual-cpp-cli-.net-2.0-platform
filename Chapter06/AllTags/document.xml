@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AllDoc>
+
+    <Entry num="1">
+        <para>These are repeating bullets:</para>
+        <list type="bullet">
+            <item> bullet </item>
+            <item> bullet </item>
+            <item> bullet </item>
+        </list>
+    </Entry>
+
+    <Entry num="2">
+        <remarks>
+            This is a complete &lt;remark&gt; entry from an include
+            file called documentation.xml.
+        </remarks>
+    </Entry>
+    
+</AllDoc>

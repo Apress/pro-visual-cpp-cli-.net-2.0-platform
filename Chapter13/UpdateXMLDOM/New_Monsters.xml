@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Monster List -->
+<MonsterList>
+  <!-- Easy Monster -->
+  <Monster>
+    <Name>Goblin</Name>
+    <HitDice Dice="1d8" Default="4" />
+    <Weapon Number="1" Damage="1d8">Saber</Weapon>
+  </Monster>
+  <!-- Medium Monster -->
+  <Monster>
+    <Name>Succubus</Name>
+    <HitDice Dice="6d8+6" Default="33" />
+    <Weapon Number="2" Damage="1d3+1">Claw</Weapon>
+    <Weapon Number="1" Damage="1d4">Dagger</Weapon>
+  </Monster>
+  <!-- Tough Monster -->
+  <Monster>
+    <Name>Red Dragon</Name>
+    <HitDice Dice="22d12+110" Default="253" />
+    <Weapon Number="1" Damage="2d8">Bite</Weapon>
+    <Weapon Number="2" Damage="2d6">Claw</Weapon>
+    <Weapon Number="2" Damage="1d8">Wing</Weapon>
+  </Monster>
+</MonsterList>

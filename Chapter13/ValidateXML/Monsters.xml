@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE MonsterList SYSTEM "Monsters.dtd"[]>
+<!-- Monster List -->
+<MonsterList>
+    <!-- Easy Monster -->
+    <Monster>
+        <Name>Goblin</Name>
+        <Weapon Number="1" Damage="1d4">Dagger</Weapon>
+        <HitDice Dice="1d8" Default="4" />
+    </Monster>
+    <!-- The rest of the document -->
+</MonsterList>

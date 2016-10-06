@@ -1,0 +1,17 @@
+cl AbstractEx.cpp /clr:safe
+cl ArrayProp.cpp /clr:safe
+cl Casting.cpp /clr
+cl Constructors.cpp /clr:safe
+cl DefIndexProps.cpp /clr:safe
+cl IndexProps.cpp /clr:safe
+cl Inherit.cpp /clr:safe
+cl InterfaceEx.cpp /clr:safe
+cl MethodEx.cpp /clr:safe
+cl NestedClass.cpp /clr:safe
+cl OperatorOverload.cpp /clr:safe
+cl OperatorOverloadMixed.cpp /clr:safe
+cl ScalarProp.cpp /clr:safe
+cl StackReferences.cpp /clr:safe
+cl StaticMethodEx.cpp /clr:safe
+cl StaticProp.cpp /clr:safe
+cl VirtualAnimals.cpp /clr:safe

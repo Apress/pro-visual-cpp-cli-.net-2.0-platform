@@ -1,0 +1,13 @@
+cl arraylist.cpp /clr:safe
+cl bitarray.cpp /clr:safe
+cl DictionaryGeneric.cpp /clr:safe
+cl HashSortList.cpp /clr:safe
+cl IEnum_foreach.cpp /clr:safe
+cl LinkedListGeneric.cpp /clr:safe
+cl ListDict.cpp /clr:safe
+cl ListGeneric.cpp /clr:safe
+cl NameValue.cpp /clr:safe
+cl QueueStack.cpp /clr:safe
+cl QueueStackGeneric.cpp /clr:safe
+cl StringColl.cpp /clr:safe
+cl StringDict.cpp /clr:safe

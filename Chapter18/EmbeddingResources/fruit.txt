@@ -1,0 +1,4 @@
+Fruit1 = Apple
+Fruit2 = Orange
+Fruit3 = Grape
+Fruit4 = Lemon

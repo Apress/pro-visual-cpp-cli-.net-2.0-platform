@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://managedcpp.net" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://managedcpp.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Zip code retrieval service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://managedcpp.net">
+      <s:element name="GetZip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetZipResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetZipSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZip" />
+  </wsdl:message>
+  <wsdl:message name="GetZipSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZipResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FindZipCodeClassSoap">
+    <wsdl:operation name="GetZip">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the zip code from city and state</wsdl:documentation>
+      <wsdl:input message="tns:GetZipSoapIn" />
+      <wsdl:output message="tns:GetZipSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FindZipCodeClassSoap" type="tns:FindZipCodeClassSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetZip">
+      <soap:operation soapAction="http://managedcpp.net/GetZip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FindZipCodeClassSoap12" type="tns:FindZipCodeClassSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetZip">
+      <soap12:operation soapAction="http://managedcpp.net/GetZip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FindZipCodeClass">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Zip code retrieval service</wsdl:documentation>
+    <wsdl:port name="FindZipCodeClassSoap" binding="tns:FindZipCodeClassSoap">
+      <soap:address location="http://localhost/FindZipCode/FindZipCode.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FindZipCodeClassSoap12" binding="tns:FindZipCodeClassSoap12">
+      <soap12:address location="http://localhost/FindZipCode/FindZipCode.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

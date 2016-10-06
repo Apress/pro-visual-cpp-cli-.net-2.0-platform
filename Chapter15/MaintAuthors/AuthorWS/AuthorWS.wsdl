@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://managedcpp.net" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://managedcpp.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Author table access Web Service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://managedcpp.net">
+      <s:element name="GetAuthors">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAuthorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAuthorsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAuthors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAuthorsResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAuthorsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAuthors" />
+  </wsdl:message>
+  <wsdl:message name="GetAuthorsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAuthorsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAuthors" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAuthorsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AuthorWSClassSoap">
+    <wsdl:operation name="GetAuthors">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method to retrieve All Authors from the database</wsdl:documentation>
+      <wsdl:input message="tns:GetAuthorsSoapIn" />
+      <wsdl:output message="tns:GetAuthorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthors">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method to Commit changed made on client with Server database</wsdl:documentation>
+      <wsdl:input message="tns:UpdateAuthorsSoapIn" />
+      <wsdl:output message="tns:UpdateAuthorsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AuthorWSClassSoap" type="tns:AuthorWSClassSoap">
+    <wsdl:documentation>
+      <wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.1" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" />
+    </wsdl:documentation>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAuthors">
+      <soap:operation soapAction="http://managedcpp.net/GetAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthors">
+      <soap:operation soapAction="http://managedcpp.net/UpdateAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AuthorWSClassSoap12" type="tns:AuthorWSClassSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAuthors">
+      <soap12:operation soapAction="http://managedcpp.net/GetAuthors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthors">
+      <soap12:operation soapAction="http://managedcpp.net/UpdateAuthors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuthorWSClass">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Author table access Web Service</wsdl:documentation>
+    <wsdl:port name="AuthorWSClassSoap" binding="tns:AuthorWSClassSoap">
+      <soap:address location="http://localhost/AuthorWS/AuthorWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AuthorWSClassSoap12" binding="tns:AuthorWSClassSoap12">
+      <soap12:address location="http://localhost/AuthorWS/AuthorWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
